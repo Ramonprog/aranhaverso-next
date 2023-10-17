@@ -1,7 +1,7 @@
+import "./globals.scss";
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import Image from 'next/image'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Spiderverse',
@@ -14,8 +14,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="pt-br">
+      <body>
+        <header className="header">
+          <Image src='/icons/menu.svg' alt='Opções de menu' width={36} height={25} />
+          <Image src='/spider-logo.svg' width={260} height={70} alt='logo do spiderman' />
+          <Image src='/icons/user.svg' width={36} height={36} alt='Icone de login' />
+        </header>
+        {children}
+      </body>
     </html>
   )
 }
